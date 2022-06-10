@@ -1,0 +1,56 @@
+<div class="container" style="height:100vh;" style="background-color: #343a40;">
+  <div class="jumbotron" style="background-color: #343a40;"> 
+  <div class="coloum" style="align-items: center; display: flex; flex-direction: column;">
+    
+      <div class="col-md-4">
+        <div class="form-group" style="display: flex;"> 
+          <input type="text" [(ngModel)] = "tarefa" 
+          class="input-group-text" 
+            id="exampleInputEmail1" 
+              placeholder="Adicionar Nova Tarefa" 
+              aria-describedby="emailHelp" >
+          <button (click)= "addTarefa(items)" 
+          class="btn btn-primary btn-lg " style="margin-left: 15px;" >Adicionar</button>
+        </div>
+      </div>
+
+      <h2 style="color: #fff;">Lista de Tarefas</h2>
+      <div class="col-md-8" style="border: 1px solid #fff; border-radius: 20px;" >
+        
+
+          <table class="table table-dark">
+            <tr style="text-align: center;">
+              <th> 
+                Tarefa
+              </th>
+              <th>
+                Remover
+              </th>
+
+            </tr>
+
+            <tr *ngFor = " let item of items; index as i " style="text-align: center;">
+              <td> {{ item }} </td>
+              <td> 
+                <button 
+                  (click)="DeletarTarefa(item)" 
+                  class="btn btn-outline-warning"
+
+                > 
+                <ion-icon name="trash-outline"></ion-icon>
+                </button> 
+              </td>
+              <td> 
+                 
+                
+              </td>
+
+
+            </tr>
+          
+          </table>
+      </div>
+
+  </div>
+</div>
+</div>
